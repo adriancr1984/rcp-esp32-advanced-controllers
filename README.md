@@ -40,12 +40,13 @@ This repository contains the Simulink models, the ESP32-S3 integration/firmware 
 | :-- | :-- |
 | Microcontroller | ESP32-S3 (Xtensa LX7 dual-core, 240 MHz, hardware FPU) |
 | Plant | Quanser SRV02 DC servo, 70:1 gear reduction |
-| Position sensor | Incremental optical encoder, 4096 counts/rev (×4 quadrature) |
+| Position sensor | Incremental optical quadrature encoder, 4096 CPR (decoded in software) |
 | Motor driver | L298N, supply limited to ±6 V |
 | Host | PC with MATLAB/Simulink, Arduino IDE, and Python |
 
-**Pin mapping:** _[AUTHOR TO COMPLETE — list the ESP32-S3 pins used for the encoder A/B,
-the L298N PWM and direction pins, and the UART.]_
+**Pin mapping:** encoder A/B on GPIO 15/16, PWM (L298N ENA) on GPIO 4, direction (IN1/IN2)
+on GPIO 5/6, telemetry over USB at 921600 bps. Full wiring and build notes in
+[`firmware/README.md`](firmware/README.md).
 
 ---
 
